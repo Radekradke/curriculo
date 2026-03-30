@@ -312,6 +312,7 @@
   .footer-contato li:nth-child(1) a::before{
     content:"";
     width:22px;
+     display: inline-block;
     height:22px;
     background:url("../img/email.svg") no-repeat center/contain;
   }
@@ -320,17 +321,20 @@
     content:"";
     width:22px;
     height:22px;
+     display: inline-block;
     background:url("img/wpp.svg") no-repeat center/contain;
   }
 
   .footer-contato li:nth-child(3) a::before{
     content:"";
+     display: inline-block;
     width:22px;
     height:22px;
     background:url("img/insta.svg") no-repeat center/contain;
   }
 
   .footer-contato li:nth-child(4) a::before{
+     display: inline-block;
     content:"";
     width:22px;
     height:22px;
