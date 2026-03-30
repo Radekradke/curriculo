@@ -338,7 +338,7 @@
     content:"";
     width:22px;
     height:22px;
-    background:url("../img/git.svg") no-repeat center/contain;
+    background:url("../img/github.svg") no-repeat center/contain;
   }
   .footer-contato a:active{
     transform:scale(.92);
