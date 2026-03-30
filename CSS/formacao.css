@@ -1,0 +1,294 @@
+.formacao{
+  background:#111;
+  color:#e5e7eb;
+  padding:80px 20px;
+}
+
+.formacao:hover .subtitulo{
+  opacity:.6;
+  transition:.8s;
+  
+}
+
+.formacao:hover .formacao-texto{
+  opacity:.9;
+  transition:.8s;
+}
+.formacao-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr; 
+  gap:100px;
+  position:relative;
+}
+
+.formacao .subtitulo{
+  grid-column:2;
+  text-align:right;
+  font-family:'Poppins', sans-serif;  
+  font-size:10rem;
+  background: linear-gradient(   to bottom,
+    rgba(255,255,255,.9),
+    rgba(255,255,255,.4),
+    rgba(255,255,255,.1)
+  );
+  background-clip:text;
+  -webkit-background-clip:text;
+  color:transparent;
+  opacity:.25;
+   background-size:200% auto;
+  transition:.6s;
+}
+.formacao-conteudo{
+  grid-column:1;
+}
+
+.formacao-texto{
+  font-size: 1.6rem;
+  line-height: 1.33;
+  max-width: 40ch;
+  margin-bottom: 60px;
+  color: #f7f7f7;
+  opacity: 0.3;
+  font-weight: bold;
+}
+
+.faculdade-box{
+  background:#0b0b0b;
+  padding:25px;
+  border-radius:8px;
+  margin-bottom:30px;
+  position:relative;
+  transition:.3s;
+}
+
+.faculdade-box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 40px rgba(30,105,217,.15);
+}
+
+.faculdade-box::before{
+  content:"";
+  position:absolute;
+  left:-4px;
+  top:20px;
+  width:4px;
+  height:20px;
+  background:linear-gradient(135deg,#1E69D9,#A5E0FE);
+}
+
+.faculdade-extra{
+  display:block;
+  font-size:.8rem;
+  color:#ffffff;
+  margin-top:6px;
+}
+
+
+.faculdade-tipo{
+  font-size:.75rem;
+  text-transform:uppercase;
+  color:#6b6d70;
+  margin-bottom:8px;
+  display:inline-block;
+}
+
+.faculdade-curso{
+  font-size:1.4rem;
+  color:#749ddb;
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.faculdade-instituicao{
+  color:#6d6f70;
+  margin-bottom:10px;
+  display:block;
+}
+
+.cursos,
+.softskills{
+  background:#0b0b0b;
+  padding:25px;
+  border-radius:8px;
+  margin-bottom:20px;
+  transition:.3s;
+  position:relative;
+  
+}
+
+.cursos:hover,
+.softskills:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(30,105,217,.1);
+}
+
+.cursos::before,
+.softskills::before{
+  content:"";
+  position:absolute;
+  left:-4px;
+  top:20px;
+  width:4px;
+  height:20px;
+  background:linear-gradient(135deg,#1E69D9,#A5E0FE);
+}
+
+.cursos h3,
+.softskills h3{
+  color: #749ddb;
+  font-size:1.1rem; 
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom: 15px;
+}
+
+.icon{
+  width:23px;
+  height:23px;
+}
+
+.cursos ul,
+.softskills ul{
+  list-style:none;
+  padding:0;
+}
+
+.cursos li{
+  display:flex;
+  justify-content:space-between;
+  padding:6px 0;
+  font-size:.9rem;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.cursos li span{
+  color:#60a5fa;
+  font-weight:600;
+}
+
+.softskills li{
+  font-size:.9rem;
+  padding:6px 0;
+  color:#d1d5db;
+}
+
+.cursos,
+.softskills,
+.faculdade-box{
+  border:1px solid rgba(255,255,255,.03);
+  transition:.3s cubic-bezier(.22,.61,.36,1);
+}
+
+
+
+@media(max-width:1024px){
+  .formacao-container{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+   .formacao .subtitulo{
+    display:none;
+  }
+  .formacao-conteudo::before{
+    content:"Formação";
+    display:block;
+    font-size:3rem;
+    font-weight:700;
+    color:#1E69D9;
+    text-align:center;
+    margin-bottom:20px;
+    letter-spacing:.5px;
+  }
+ .formacao-conteudo::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:2px;
+    margin: 30px auto 30px auto;
+    background:linear-gradient(90deg,#1E69D9,#A5E0FE);
+    border-radius:2px;
+  }
+ .formacao-texto{
+    text-align:center;
+    margin:0 auto 40px auto;
+}
+
+@media(max-width:768px){
+
+  /* 🔥 padding mais equilibrado */
+  .formacao{
+    padding:60px 16px;
+  }
+
+  /* 🔥 subtitulo melhorado */
+  .formacao .subtitulo{
+    font-size:2.4rem;
+    text-align:center;
+
+    background:none;
+    -webkit-background-clip: initial;
+    color:#1E69D9;
+
+    opacity:1;
+
+    margin-bottom:10px;
+  }
+
+  /* 🔥 texto mais confortável */
+  .formacao-texto{
+    font-size:1.2rem;
+    line-height:1.5;
+
+    max-width:32ch;
+    margin:0 auto 40px;
+
+    text-align:center;
+    opacity:.85;
+  }
+
+  /* 🔥 cards mais leves */
+  .faculdade-box,
+  .cursos,
+  .softskills{
+    padding:20px;
+    border-radius:12px;
+  }
+
+  /* 🔥 título do curso */
+  .faculdade-curso{
+    font-size:1.2rem;
+    text-align:center;
+  }
+
+  .faculdade-tipo,
+  .faculdade-instituicao,
+  .faculdade-extra{
+    text-align:center;
+    display:block;
+  }
+
+  /* 🔥 cursos alinhados melhor */
+  .cursos h3,
+  .softskills h3{
+    justify-content:center;
+    text-align:center;
+  }
+
+  /* 🔥 lista cursos mais limpa */
+  .cursos li{
+    flex-direction:column;
+    gap:4px;
+    align-items:center;
+    text-align:center;
+  }
+
+  /* 🔥 softskills centralizadas */
+  .softskills li{
+    text-align:center;
+  }
+
+}}
