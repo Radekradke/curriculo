@@ -320,21 +320,21 @@
     content:"";
     width:22px;
     height:22px;
-    background:url("/img/wpp.svg") no-repeat center/contain;
+    background:url("img/wpp.svg") no-repeat center/contain;
   }
 
   .footer-contato li:nth-child(3) a::before{
     content:"";
     width:22px;
     height:22px;
-    background:url("../img/insta.svg") no-repeat center/contain;
+    background:url("img/insta.svg") no-repeat center/contain;
   }
 
   .footer-contato li:nth-child(4) a::before{
     content:"";
     width:22px;
     height:22px;
-    background:url("../img/github.svg") no-repeat center/contain;
+    background:url("/img/git.svg") no-repeat center/contain;
   }
 
   /* clique */
