@@ -1,67 +1,87 @@
+/* =========================================================================
+   Interações da página
+   1. Revelação dos blocos conforme entram na tela
+   2. Sombra do cabeçalho ao rolar
+   3. Destaque do item de menu da seção visível
+   Tudo respeita a preferência de movimento reduzido do sistema.
+   ========================================================================= */
 
-const elements = document.querySelectorAll(
-  '.empresa, .faculdade-box, .cursos, .softskills'
-);
+(function () {
+  "use strict";
 
-const observerScroll = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-}, {
-  threshold: 0.2
-});
+  var reduzirMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-elements.forEach(el => observerScroll.observe(el));
+  /* 1. Revelação progressiva ------------------------------------------- */
+  var blocos = document.querySelectorAll(
+    ".apresentacao-etiqueta, .apresentacao-titulo, .apresentacao-texto, .retrato, " +
+    ".indicador, .secao-cabecalho, .projeto, .projeto-extra, .area, .graduacao, .cursos, " +
+    ".contato-chamada, .contato-lista li"
+  );
 
-const texto = document.querySelector(".projetos-texto");
-function typeEffectHTML(element){
-  const originalHTML = element.innerHTML;
-  element.innerHTML = "";
-  element.classList.add("typing");
+  if (!reduzirMovimento && "IntersectionObserver" in window) {
+    blocos.forEach(function (bloco, indice) {
+      bloco.classList.add("revelar");
+      bloco.style.transitionDelay = (indice % 4) * 70 + "ms";
+    });
 
-  let i = 0;
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visivel");
+          observador.unobserve(entrada.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -6% 0px" });
 
-  function getSpeed(char){
-    if(char === " "){
-      return 20;
-    }
-    if(char === "." || char === "," ){
-      return 120;
-    }
-    return Math.random() * 40 + 30; 
+    blocos.forEach(function (bloco) {
+      observador.observe(bloco);
+    });
+
+    /* Rede de segurança: nada pode ficar invisível por falha do observador. */
+    window.setTimeout(function () {
+      blocos.forEach(function (bloco) {
+        var caixa = bloco.getBoundingClientRect();
+        if (caixa.top < window.innerHeight) {
+          bloco.classList.add("visivel");
+        }
+      });
+    }, 1200);
   }
-function typing(){
-  const char = originalHTML.charAt(i);
 
-  if(char === "<"){
-    const closeTag = originalHTML.indexOf(">", i);
-    element.innerHTML = originalHTML.slice(0, closeTag + 1);
-    i = closeTag + 1;
-  } else {
-    element.innerHTML = originalHTML.slice(0, i + 1);
-    i++;
+  /* 2. Cabeçalho ao rolar ---------------------------------------------- */
+  var cabecalho = document.querySelector(".cabecalho");
+
+  function atualizarCabecalho() {
+    if (!cabecalho) return;
+    cabecalho.classList.toggle("fixado", window.scrollY > 24);
   }
 
-  if(i < originalHTML.length){
-    setTimeout(typing, getSpeed(char));
-  } else {
-    element.classList.remove("typing");
+  atualizarCabecalho();
+  window.addEventListener("scroll", atualizarCabecalho, { passive: true });
+
+  /* 3. Menu ativo conforme a seção ------------------------------------- */
+  var links = Array.prototype.slice.call(document.querySelectorAll(".navegacao a[href^='#']"));
+  var secoes = links
+    .map(function (link) {
+      return document.querySelector(link.getAttribute("href"));
+    })
+    .filter(Boolean);
+
+  if (secoes.length && "IntersectionObserver" in window) {
+    var observadorMenu = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (entrada) {
+        if (!entrada.isIntersecting) return;
+        links.forEach(function (link) {
+          link.classList.toggle(
+            "ativo",
+            link.getAttribute("href") === "#" + entrada.target.id
+          );
+        });
+      });
+    }, { threshold: 0, rootMargin: "-45% 0px -50% 0px" });
+
+    secoes.forEach(function (secao) {
+      observadorMenu.observe(secao);
+    });
   }
-}
-
-  setTimeout(typing, 300);
-}
-const observerTyping = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      typeEffectHTML(entry.target);
-      observerTyping.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.6
-});
-
-observerTyping.observe(texto);
+})();

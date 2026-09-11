@@ -1,0 +1,222 @@
+/* =========================================================================
+   BASE — variáveis, reset e tipografia
+   ========================================================================= */
+
+:root {
+  /* Cores */
+  --papel: #F2F0EB;
+  --papel-fundo: #EAE7E0;
+  --tinta: #17130F;
+  --tinta-media: #57504A;
+  --tinta-suave: #6B6058;
+  --linha: rgba(23, 19, 15, 0.14);
+  --linha-forte: rgba(23, 19, 15, 0.28);
+  --destaque: #9A4A24;
+  --claro: #F2F0EB;
+
+  /* Tipografia */
+  --fonte-texto: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fonte-titulo: "Instrument Serif", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --fonte-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* Ritmo */
+  --margem: clamp(20px, 5.5vw, 72px);
+  --largura: 1280px;
+  --secao-espaco: clamp(72px, 11vw, 150px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+::selection {
+  background: var(--tinta);
+  color: var(--papel);
+}
+
+:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+/* Atalho de acessibilidade -------------------------------------------- */
+.pular {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 50;
+  padding: 12px 20px;
+  background: var(--tinta);
+  color: var(--papel);
+  font-size: 0.8rem;
+}
+
+.pular:focus {
+  left: 8px;
+  top: 8px;
+}
+
+/* Estruturas repetidas ------------------------------------------------- */
+.secao {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding-inline: var(--margem);
+  padding-block: var(--secao-espaco) 0;
+}
+
+.secao-cabecalho {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) minmax(0, 22rem);
+  align-items: baseline;
+  gap: 8px 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--linha-forte);
+  margin-bottom: clamp(40px, 6vw, 76px);
+}
+
+.secao-indice {
+  font-family: var(--fonte-mono);
+  font-size: 0.75rem;
+  color: var(--tinta-suave);
+  letter-spacing: 0.04em;
+}
+
+.secao-titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.015em;
+}
+
+.secao-nota {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--tinta-media);
+  max-width: 34ch;
+}
+
+/* Etiquetas em mono ---------------------------------------------------- */
+.etiqueta-mono {
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--tinta-suave);
+}
+
+/* Link com seta -------------------------------------------------------- */
+.link-seta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fonte-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--tinta);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--linha-forte);
+  transition: color 0.25s ease, border-color 0.25s ease, gap 0.25s ease;
+}
+
+.link-seta:hover {
+  color: var(--destaque);
+  border-color: var(--destaque);
+  gap: 16px;
+}
+
+/* Revelação ao rolar --------------------------------------------------- */
+.revelar {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .revelar {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .secao-cabecalho {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .secao-nota {
+    max-width: 46ch;
+  }
+}

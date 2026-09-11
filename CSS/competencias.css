@@ -1,0 +1,109 @@
+/* =========================================================================
+   COMPETÊNCIAS — organizadas por contexto de aplicação
+   ========================================================================= */
+
+.competencias-grade {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--linha-forte);
+}
+
+.area {
+  padding: clamp(24px, 3vw, 36px) clamp(16px, 2vw, 28px) clamp(28px, 4vw, 44px) 0;
+  border-right: 1px solid var(--linha);
+}
+
+.area:nth-child(4) {
+  border-right: 0;
+}
+
+.area--larga {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-top: 1px solid var(--linha);
+  padding-right: 0;
+}
+
+.area-titulo {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--fonte-texto);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--linha);
+}
+
+.area-indice {
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--destaque);
+}
+
+.area-lista li {
+  position: relative;
+  padding: 9px 0 9px 18px;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--tinta-media);
+}
+
+.area-lista li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 6px;
+  height: 1px;
+  background: var(--linha-forte);
+}
+
+.area-lista--colunas {
+  columns: 2;
+  column-gap: clamp(24px, 4vw, 64px);
+}
+
+.area-lista--colunas li {
+  break-inside: avoid;
+}
+
+@media (max-width: 900px) {
+  .competencias-grade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .area {
+    border-bottom: 1px solid var(--linha);
+  }
+
+  .area:nth-child(2n) {
+    border-right: 0;
+    padding-left: clamp(16px, 4vw, 28px);
+  }
+}
+
+@media (max-width: 600px) {
+  .competencias-grade {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .area,
+  .area:nth-child(2n) {
+    border-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .area--larga {
+    border-bottom: 0;
+  }
+
+  .area-lista--colunas {
+    columns: 1;
+  }
+}

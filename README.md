@@ -2,14 +2,14 @@
 
 # Currículo - André Gomes
 
-### Portfólio pessoal para apresentar projetos, formação, competências e contatos profissionais
+### Portfólio pessoal para apresentar trajetória, projetos, competências, formação e contatos profissionais
 
 ![HTML5](https://img.shields.io/badge/HTML5-Estrutura-E34F26?style=for-the-badge&logo=html5&logoColor=fff)
 ![CSS3](https://img.shields.io/badge/CSS3-Design-1572B6?style=for-the-badge&logo=css3&logoColor=fff)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Interações-F7DF1E?style=for-the-badge&logo=javascript&logoColor=111)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Publicação-222222?style=for-the-badge&logo=github&logoColor=fff)
 
-**Projeto pessoal desenvolvido como currículo digital e vitrine de evolução em desenvolvimento web.**
+**Projeto pessoal desenvolvido como portfólio profissional e vitrine de evolução em desenvolvimento web.**
 
 [Acessar página publicada](https://radekradke.github.io/curriculo/)
 
@@ -19,26 +19,25 @@
 
 ## Visão Geral
 
-Este projeto é um **currículo digital** criado para apresentar minha trajetória, meus projetos e minhas habilidades de forma mais visual e direta do que um currículo tradicional.
+Este projeto é o meu **portfólio profissional**: uma página única que apresenta quem eu sou, o que eu faço,
+os projetos que coloquei no ar, minhas competências e como falar comigo.
 
-A ideia foi construir uma página simples, responsiva e com personalidade, reunindo em um só lugar quem eu sou como desenvolvedor, quais projetos já publiquei, minha formação acadêmica, cursos complementares, competências e formas de contato.
-
-Mais do que listar informações, o site funciona como uma pequena vitrine: ele mostra o que eu venho construindo e como venho evoluindo na prática.
+A construção parte de uma ideia simples: um currículo em PDF entrega informação, mas não entrega presença.
+A página resolve isso com uma leitura editorial — tipografia grande, bastante espaço em branco,
+hierarquia clara e dados apresentados como números, e não como listas genéricas.
 
 ---
 
 ## Objetivo Do Projeto
 
-O objetivo principal foi criar uma presença profissional própria, usando tecnologias fundamentais da web.
+Criar uma presença profissional própria, usando tecnologias fundamentais da web, capaz de responder
+em poucos segundos às perguntas que um recrutador, empresa ou cliente faz ao abrir a página:
 
-O site foi pensado para:
-
-- apresentar meu perfil como desenvolvedor Front End e Mobile;
-- reunir projetos reais publicados;
-- destacar habilidades técnicas e de design;
-- mostrar formação acadêmica e cursos complementares;
-- facilitar contato profissional;
-- servir como base visual para meu portfólio no GitHub.
+- quem é a pessoa e qual a sua área;
+- o que ela já construiu e publicou;
+- quais competências aplica na prática;
+- qual a sua formação;
+- como entrar em contato.
 
 ---
 
@@ -46,12 +45,15 @@ O site foi pensado para:
 
 | Seção | Conteúdo |
 | --- | --- |
-| **Introdução** | Apresentação pessoal, área de atuação e localização |
-| **Projetos** | Trabalhos publicados como Voo Nobre, Ju Acessórios e Easy Visa |
-| **Formação** | Graduação em Ciência da Computação e previsão de conclusão |
-| **Cursos** | Estudos complementares em lógica, mobile e UI/UX |
-| **Competências** | Soft skills e pontos fortes profissionais |
-| **Contato** | Email, telefone, Instagram, GitHub e chamada para conversa |
+| **Apresentação** | Área de atuação, localização, resumo profissional e atalhos de contato |
+| **Indicadores** | Números reais: projetos publicados, carga horária de cursos, linguagens e prazo da graduação |
+| **(01) Trabalho selecionado** | Voo Nobre, Ju\*Acessórios e Easy Visa, com ano, atuação, foco e tecnologias |
+| **(02) Competências** | Organizadas por contexto: front end, back end, design, mobile e processo |
+| **(03) Formação** | Graduação em Ciência da Computação e cursos complementares com carga horária |
+| **(04) Contato** | E-mail, telefone/WhatsApp, GitHub e Instagram |
+
+> A seção de **experiência profissional** já está estruturada em HTML e CSS, comentada no `index.html`.
+> Basta descomentar e preencher quando houver empresas, cargos e períodos para publicar.
 
 ---
 
@@ -59,9 +61,22 @@ O site foi pensado para:
 
 | Projeto | Descrição | Status |
 | --- | --- | --- |
-| **Voo Nobre** | Site institucional para agência de viagens, com foco em presença digital e geração de leads | Online |
-| **Ju Acessórios** | Mostruário digital com catálogo, sacola e envio de pedido pelo WhatsApp | Online |
-| **Easy Visa** | Landing page para consultoria de vistos com fluxo de agendamento e pagamento | Em andamento |
+| **Voo Nobre** | Site institucional para agência de viagens, com formulário em PHP e foco em geração de leads | Online |
+| **Ju\*Acessórios** | Mostruário digital com catálogo, sacola em JavaScript e envio do pedido pelo WhatsApp | Online |
+| **Easy Visa** | Página para consultoria de vistos com fluxo de agendamento e pagamento | Em andamento |
+
+---
+
+## Direção Visual
+
+| Decisão | Motivo |
+| --- | --- |
+| **Fundo em tom de papel (`#F2F0EB`)** | Leitura calma, longe do branco puro e do visual de template |
+| **Serifada de display + grotesca + monoespaçada** | Contraste entre títulos editoriais, texto corrido e metadados técnicos |
+| **Um único acento (`#9A4A24`)** | Evita paleta espalhada; a cor marca só o que precisa de atenção |
+| **Régua fina entre blocos** | Estrutura de página impressa, sem caixas e sombras |
+| **Números como elemento gráfico** | Projetos, carga horária e prazos ganham peso visual |
+| **Sem barras de progresso ou grade de ícones** | Competência é descrita pelo contexto de uso, não por porcentagem |
 
 ---
 
@@ -69,10 +84,10 @@ O site foi pensado para:
 
 ```mermaid
 flowchart LR
-    A["Visitante acessa o currículo"] --> B["Conhece o perfil profissional"]
-    B --> C["Explora projetos publicados"]
-    C --> D["Consulta formação e cursos"]
-    D --> E["Avalia competências"]
+    A["Visitante abre a página"] --> B["Entende a área em segundos"]
+    B --> C["Lê os projetos publicados"]
+    C --> D["Confere competências"]
+    D --> E["Consulta formação e cursos"]
     E --> F["Entra em contato"]
 ```
 
@@ -82,12 +97,12 @@ flowchart LR
 
 | Tecnologia | Uso no projeto |
 | --- | --- |
-| **HTML5** | Estrutura das seções e conteúdo da página |
-| **CSS3** | Layout, responsividade, estilos e identidade visual |
-| **JavaScript** | Animações de entrada e efeito de digitação |
-| **Intersection Observer** | Ativação de elementos conforme aparecem na tela |
-| **SVG** | Ícones, logo e detalhes visuais |
-| **GitHub Pages** | Publicação do currículo online |
+| **HTML5** | Estrutura semântica das seções e do conteúdo |
+| **CSS3** | Design, grid, tipografia fluida e responsividade |
+| **JavaScript** | Revelação dos blocos, estado do cabeçalho e menu ativo |
+| **Intersection Observer** | Detecção do que entra na tela durante a rolagem |
+| **Google Fonts** | Instrument Serif, Archivo e JetBrains Mono |
+| **GitHub Pages** | Publicação do site |
 
 ---
 
@@ -98,54 +113,47 @@ flowchart LR
 |-- index.html
 |-- script.js
 |-- CSS
-|   |-- style.css
-|   |-- global.css
-|   |-- header.css
-|   |-- introducao.css
-|   |-- projetos.css
-|   |-- formacao.css
-|   `-- footer.css
+|   |-- style.css          # importa os blocos na ordem da página
+|   |-- base.css           # variáveis, reset, tipografia e estruturas repetidas
+|   |-- cabecalho.css      # marca e navegação
+|   |-- apresentacao.css   # primeira dobra e indicadores
+|   |-- projetos.css       # trabalho selecionado
+|   |-- experiencia.css    # estilo pronto para a experiência profissional
+|   |-- competencias.css   # áreas de atuação
+|   |-- formacao.css       # graduação e cursos
+|   `-- contato.css        # faixa escura de fechamento
 |-- img
-|   |-- perfil.png
-|   |-- logo.svg
-|   |-- github.svg
-|   |-- email.svg
-|   |-- insta.svg
-|   `-- wpp.svg
+|   |-- perfil.png         # retrato usado na apresentação
+|   `-- ...                # logo e ícones das versões anteriores
 `-- README.md
 ```
+
+Cada arquivo de CSS corresponde a um bloco visível da página, o que torna qualquer ajuste
+localizado: para mexer nos projetos, só o `projetos.css` precisa ser aberto.
 
 ---
 
 ## Interações
 
-O projeto usa JavaScript para deixar a experiência mais viva sem pesar a página.
+O JavaScript é curto e proposital, sem biblioteca externa:
 
-Entre os detalhes implementados estão:
-
-- animação de entrada nos cards de projetos;
-- animação de entrada na formação, cursos e competências;
-- efeito de digitação no texto da seção de projetos;
-- navegação por âncoras entre seções;
-- links externos abrindo em nova aba para os projetos publicados.
+- revelação suave dos blocos conforme entram na tela;
+- rede de segurança que exibe o conteúdo caso o observador falhe;
+- linha fina no cabeçalho quando a página começa a rolar;
+- item do menu destacado conforme a seção visível;
+- todo o movimento é desligado quando o sistema pede `prefers-reduced-motion`.
 
 ---
 
-## Minha Atuação
+## Responsividade
 
-Neste projeto, trabalhei a construção completa da página, desde a estrutura HTML até a organização visual em CSS e pequenas interações em JavaScript.
+A versão mobile não é a versão desktop comprimida: a composição muda.
 
-O foco foi criar uma apresentação pessoal que fosse simples, objetiva e honesta: sem excesso de elementos, mas com cuidado suficiente para mostrar atenção a layout, hierarquia visual, responsividade e experiência de leitura.
-
-Pontos trabalhados:
-
-- estruturação semântica do currículo;
-- separação do CSS por seções;
-- composição visual da apresentação;
-- cards de projetos reais;
-- animações com JavaScript;
-- organização de formação, cursos e competências;
-- publicação via GitHub Pages.
+- abaixo de 1000px o título ocupa a largura inteira e o retrato vira uma faixa horizontal;
+- o cabeçalho deixa de ser fixo no mobile, para não cobrir o conteúdo;
+- os indicadores passam de quatro colunas para duas;
+- cada bloco de projeto empilha número, título, texto e ficha técnica;
+- tipografia fluida com `clamp()`, testada de 320px a 1920px sem rolagem horizontal.
 
 ---
 
@@ -153,23 +161,24 @@ Pontos trabalhados:
 
 | Competência | Aplicação |
 | --- | --- |
-| **HTML e semântica** | Organização clara das seções do currículo |
-| **CSS modular** | Arquivos separados por áreas da interface |
-| **Responsividade** | Layout pensado para diferentes tamanhos de tela |
-| **JavaScript vanilla** | Animações e efeitos sem framework |
-| **Portfólio real** | Projetos publicados e acessíveis ao visitante |
-| **Apresentação profissional** | Currículo com identidade visual própria |
+| **HTML e semântica** | Seções, listas de definição e marcos de acessibilidade |
+| **CSS moderno** | Variáveis, grid, `clamp()`, `aspect-ratio` e arquivos por bloco |
+| **JavaScript vanilla** | Interações com Intersection Observer, sem framework |
+| **Direção visual** | Paleta, tipografia e ritmo definidos e aplicados com consistência |
+| **Responsividade real** | Composição adaptada, não apenas redimensionada |
+| **Acessibilidade** | Atalho de navegação, contraste verificado e respeito ao movimento reduzido |
 
 ---
 
 ## Nota De Portfólio
 
-Este projeto representa minha base pública de apresentação como desenvolvedor. Ele funciona como ponto de entrada para conhecer meus projetos, minha formação e meu momento atual de evolução técnica.
+Esta é a minha base pública de apresentação como desenvolvedor: o ponto de entrada para conhecer
+meus projetos, minha formação e o momento atual da minha evolução técnica.
 
-A proposta é simples: mostrar, de forma direta, o que venho estudando, construindo e colocando no ar.
+A proposta continua simples — mostrar, de forma direta, o que venho estudando, construindo e colocando no ar.
 
 <div align="center">
 
-**Currículo digital - uma página para apresentar trajetória, projetos e vontade de evoluir.**
+**Portfólio profissional - uma página para apresentar trajetória, projetos e vontade de evoluir.**
 
 </div>

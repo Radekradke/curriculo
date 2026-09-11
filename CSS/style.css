@@ -1,6 +1,13 @@
-@import "./global.css";
-@import "./header.css";
-@import "./introducao.css";
+/* =========================================================================
+   André Gomes — portfólio
+   Folha principal: importa cada bloco da página na ordem em que aparece.
+   ========================================================================= */
+
+@import "./base.css";
+@import "./cabecalho.css";
+@import "./apresentacao.css";
 @import "./projetos.css";
+@import "./experiencia.css";
+@import "./competencias.css";
 @import "./formacao.css";
-@import "./footer.css";
+@import "./contato.css";

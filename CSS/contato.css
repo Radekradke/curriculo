@@ -1,0 +1,119 @@
+/* =========================================================================
+   CONTATO — faixa escura de fechamento
+   ========================================================================= */
+
+.contato {
+  background: var(--tinta);
+  color: var(--claro);
+  padding-block: clamp(64px, 9vw, 120px) clamp(28px, 4vw, 44px);
+}
+
+.contato-interno {
+  max-width: var(--largura);
+  margin: 0 auto;
+  padding-inline: var(--margem);
+}
+
+.secao-cabecalho--claro {
+  border-top-color: rgba(242, 240, 235, 0.3);
+  margin-bottom: clamp(36px, 5vw, 60px);
+}
+
+.secao-cabecalho--claro .secao-indice,
+.secao-cabecalho--claro .secao-nota {
+  color: rgba(242, 240, 235, 0.62);
+}
+
+.secao-cabecalho--claro .secao-titulo {
+  color: var(--claro);
+}
+
+/* Chamada -------------------------------------------------------------- */
+.contato-chamada {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.1rem, 5.6vw, 4.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  max-width: 20ch;
+  margin-bottom: clamp(48px, 7vw, 88px);
+}
+
+.contato-chamada a {
+  font-style: italic;
+  color: #E4A07A;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 92%;
+  transition: background-size 0.4s ease, opacity 0.3s ease;
+}
+
+.contato-chamada a:hover {
+  background-size: 0% 1px;
+  opacity: 0.85;
+}
+
+/* Lista de contatos ---------------------------------------------------- */
+.contato-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(24px, 5vw, 72px);
+  border-top: 1px solid rgba(242, 240, 235, 0.18);
+}
+
+.contato-lista li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: clamp(20px, 2.6vw, 30px) 0;
+  border-bottom: 1px solid rgba(242, 240, 235, 0.18);
+}
+
+.contato-rotulo {
+  font-family: var(--fonte-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(242, 240, 235, 0.5);
+}
+
+.contato-lista a {
+  display: inline-block;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  line-height: 1.25;
+  color: var(--claro);
+  word-break: break-word;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.contato-lista a:hover {
+  color: #E4A07A;
+  transform: translateX(4px);
+}
+
+/* Rodapé --------------------------------------------------------------- */
+.contato-rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-top: clamp(40px, 6vw, 72px);
+  font-family: var(--fonte-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: rgba(242, 240, 235, 0.5);
+}
+
+@media (max-width: 640px) {
+  .contato-lista {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contato-chamada {
+    max-width: 100%;
+  }
+
+  .contato-rodape {
+    flex-direction: column;
+  }
+}
