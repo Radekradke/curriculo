@@ -67,15 +67,6 @@
 
 /* ---------- Signature ---------- */
 
-/* Caveat (SIL OFL 1.1) — ver fonts/OFL.txt */
-@font-face {
-  font-family: "Caveat";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/caveat-700-latin.woff2") format("woff2");
-}
-
 .signature {
   display: block;
   width: 100%;
