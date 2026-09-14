@@ -1,0 +1,54 @@
+/* ============================================================
+   Animated Gradient — fundo animado do topo
+   ============================================================ */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* conteudo sempre acima do fundo */
+.hero > .header,
+.hero > .introducao {
+  position: relative;
+  z-index: 1;
+}
+
+.animated-gradient {
+  position: absolute;
+
+  /* estoura as bordas pro blur nao criar cantos vazios */
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+
+  filter: blur(55px) saturate(1.15);
+  opacity: .9;
+
+  /* desaparece antes de encostar na secao de projetos */
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent 88%);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent 88%);
+
+  /* manda pra camada da GPU */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .animated-gradient {
+    filter: blur(40px) saturate(1.1);
+    opacity: .75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient {
+    opacity: .6;
+  }
+}

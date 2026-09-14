@@ -9,6 +9,9 @@
 </head>
 
 <body>
+  <div class="hero">
+    <canvas class="animated-gradient" data-preset="Prism" aria-hidden="true"></canvas>
+
   <header class="header">
     <img src="img/logo.svg" alt="logo">
     <nav>
@@ -23,12 +26,13 @@
   <main class="introducao">
     <img src="img/perfil.png" alt="Perfil">
     <div>
-         <h1> Desenvolvedor
+         <h1 class="gradient-wave"> Desenvolvedor
             <br>Front End &
             <br>Mobile</h1>
             <p>Localizado em Queimados, Rio de Janeiro.</p>
       </div>
   </main>
+  </div>
 
   <section class="projetos" id="projetos" aria-label="Projetos">
     <h2 class="subtitulo">Projetos</h2>
@@ -97,7 +101,7 @@
 
     <div class="formacao-conteudo">
 
-      <p class="formacao-texto">
+      <p class="formacao-texto randomized-text" data-delay="0.15">
 Graduando em Ciência da Computação com foco em desenvolvimento Web e Mobile. <br> Busco evolução técnica constante por meio de cursos especializados em design de interfaces e desenvolvimento de aplicações.</p>
 
       <div class="faculdade-box">
@@ -149,6 +153,12 @@ Graduando em Ciência da Computação com foco em desenvolvimento Web e Mobile. 
         <li><a href="https://instagram.com/andre__radke" target="_blank">@andre__radke</a></li>
         <li><a href="https://github.com/Radekradke" target="_blank">github.com/Radekradke</a></li>
       </ul>
+
+    <div class="footer-assinatura">
+      <svg class="signature" viewBox="0 0 300 90" role="img" aria-label="André Gomes">
+        <text class="signature-text" x="6" y="62">André Gomes</text>
+      </svg>
+      <span class="signature-legenda">Desenvolvedor Front End &amp; Mobile</span>
     </div>
 
     <p class="footer-copy">Alguns direitos reservados. ©</p>
@@ -156,8 +166,10 @@ Graduando em Ciência da Computação com foco em desenvolvimento Web e Mobile. 
   </div>
 </footer>
 
-</body>
 <script src="script.js"></script>
+<script src="animated-gradient.js"></script>
+<script src="text-effects.js"></script>
 
+</body>
 
 </html>
